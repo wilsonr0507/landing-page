@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+
+.animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+.animate-fadeInSlow { animation: fadeIn 1.6s ease-out forwards; }
+
+
+/* Colores - Paleta B (verde ecológico para SV Energy) */
+:root {
+--sv-green: #16a34a;
+--sv-green-dark: #064e3b;
+--sv-white: #ffffff;
+}
+
+
+/* Ajustes globales */
+html, body { height: 100%; }
+body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+
+/* Botón flotante WhatsApp */
+.whatsapp-float { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 60; }

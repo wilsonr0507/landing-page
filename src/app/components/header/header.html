@@ -1,0 +1,36 @@
+
+<header class="w-full fixed top-0 left-0 z-50 bg-white shadow">
+  <nav class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:var(--sv-green-dark); color:var(--sv-white); font-weight:700;">SV</div>
+      <span class="text-xl font-bold text-slate-800">SV Soluciones de Energia & Seguridad</span>
+    </div>
+
+    <ul class="hidden md:flex gap-8 font-semibold text-slate-700">
+      <li routerLink="/" routerLinkActive="text-[var(--sv-green)]" class="hover:text-[var(--sv-green)] cursor-pointer">Inicio</li>
+      <li routerLink="/servicios" routerLinkActive="text-[var(--sv-green)]" class="hover:text-[var(--sv-green)] cursor-pointer">Servicios</li>
+      <li routerLink="/contacto" routerLinkActive="text-[var(--sv-green)]" class="hover:text-[var(--sv-green)] cursor-pointer">Contacto</li>
+    </ul>
+
+    <button class="md:hidden p-2 rounded bg-slate-100" (click)="toggleMobile()" aria-label="Toggle menu">
+      <svg *ngIf="!mobileOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+      </svg>
+      <svg *ngIf="mobileOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="md:hidden" *ngIf="mobileOpen">
+    <ul class="flex flex-col gap-3 px-6 pb-4 bg-white">
+      <li (click)="toggleMobile()" class="py-2 border-b"><a routerLink="/">Inicio</a></li>
+      <li (click)="toggleMobile()" class="py-2 border-b"><a routerLink="/servicios">Servicios</a></li>
+      <li (click)="toggleMobile()" class="py-2 border-b"><a routerLink="/contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
